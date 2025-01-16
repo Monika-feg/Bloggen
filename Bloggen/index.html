@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bloggen</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+</head>
+<header>
+     <div>
+        <h1>Bloggen</h1>
+    </div>
+</header>
+<body>
+
+    <div id="leftEffect"></div>
+    <div id="rightEffect"></div>
+    
+    <div id="createPost">
+     <h2>Skriv ett inlägg</h2>
+
+     <form>
+        <label for="title">Title</label>
+        <input type="text" id="title" required> <br>
+        <label for="date"> Datum</label>
+        <input type="date" id="date" required> <br>
+        <label for="post">Inlägg</label>
+        <textarea rows="10" id="post"></textarea><br>
+        <button id="saveBtn">Spara</button>
+     </form>
+
+    </div>
+
+    <div id="showPost">
+        <ul id="postList"></ul>
+    </div>
+</body>
+</html>

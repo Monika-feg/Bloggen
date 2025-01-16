@@ -1,0 +1,174 @@
+body{
+    background-color: #08532e;
+background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+font-family: "Henny Penny", serif;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+height: 100vh;
+margin: 0;
+  
+}
+
+
+/* Roliga effekter på sidorna av formuläret */
+#leftEffect, #rightEffect {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;  /* Justera bredden på effekterna */
+    background-image:url(blogg.webp);
+    background-size: cover;   
+    z-index: -1;  /* Så att de inte täcker över innehållet */
+    opacity: 0.7;
+    animation: moveEffect 10s infinite alternate;
+}
+
+#leftEffect {
+    left: 0;
+}
+
+#rightEffect {
+    right: 0;
+}
+
+@keyframes moveEffect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Rubrik */
+header h1 {
+font-size: 36px;
+margin-top: 20px;
+text-align: center;
+color: #07110b;
+font-family: "Henny Penny", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/* Formulär */
+#createPost {
+background-color: #187150;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+width: 80%;
+max-width: 600px;
+margin-top: 20px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label {
+margin-top: 10px;
+font-weight: bold;
+}
+
+input, textarea, button {
+margin-top: 8px;
+padding: 8px;
+border-radius: 4px;
+border: 1px solid #ddd;
+}
+
+/* Styling för knappen */
+button {
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+border: none;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+/* Visning av inlägg horisontellt */
+#showPost {
+display: flex;
+flex-wrap: wrap; /* Gör att inläggen går till nästa rad när de inte får plats */
+justify-content: flex-start; /* Justera innehåll från vänster */
+gap: 20px; /* Mellanrum mellan inläggen */
+margin-top: 30px;
+width: 100%; /* Gör så att utrymmet för inlägg är brett */
+max-width: 1200px;
+padding: 30px;
+}
+
+#postList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Mellanrum mellan inläggen */
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+#postList li {
+    background-color: #076640;
+    padding: 20px;
+    border-style: solid;
+    border-color: rgb(9, 9, 9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Bredd på varje inlägg */
+    text-align: left;
+    list-style-type: none;
+    position: relative;
+    margin: 10px;
+    color: #fff;
+}
+
+/* Pratbubbelns spets */
+#postList li::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #01100a; /* Färgen på pratbubblan */
+}
+
+/* Styling för texten inuti pratbubblan */
+#postList li h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#postList li p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+#postList li button {
+    background-color: #f44336;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#postList li button:hover {
+    background-color: #e53935;
+}
